@@ -4,20 +4,34 @@ import {CommonModule} from '@angular/common';
 import {AppPagesRouting} from './app-pages.routing';
 import {AppPagesComponent} from './app-pages.component';
 import {CategoriesPageComponent} from './categories';
+import {InventoryPageComponent} from './inventory/inventory-page.component';
+import {ContactUsPageComponent} from './contact-us/contact-us-page.component';
+import {TrackOrderPageComponent} from './track-order/track-order-page.component';
+import {MyAccountPageComponent} from './my-account/my-account-page.component';
+import {ThemeModule} from './theme.module';
 
 @NgModule({
   declarations: [
     AppPagesComponent,
     HomePageComponent,
-    CategoriesPageComponent
+    CategoriesPageComponent,
+    InventoryPageComponent,
+    ContactUsPageComponent,
+    MyAccountPageComponent,
+    TrackOrderPageComponent
 
   ],
   imports: [
     CommonModule,
 
+    /// app modules
+    ThemeModule,
+
     /// routing
     AppPagesRouting
-  ]
+  ],
+  exports: [],
+  providers: []
 })
 export class AppPagesModule {
 }
