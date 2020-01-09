@@ -9,6 +9,8 @@ import {ContactUsPageComponent} from './contact-us/contact-us-page.component';
 import {TrackOrderPageComponent} from './track-order/track-order-page.component';
 import {MyAccountPageComponent} from './my-account/my-account-page.component';
 import {ThemeModule} from './theme.module';
+import {ProductDetailsPageComponent} from './product-details';
+import {CartPageComponent} from './cart';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {ThemeModule} from './theme.module';
     InventoryPageComponent,
     ContactUsPageComponent,
     MyAccountPageComponent,
-    TrackOrderPageComponent
+    TrackOrderPageComponent,
+    ProductDetailsPageComponent,
+    CartPageComponent
 
   ],
   imports: [

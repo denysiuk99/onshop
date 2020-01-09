@@ -6,16 +6,35 @@
     </ol>
   </nav>
 </div>
+<h4 class="text-center">Welcome! Here You Can Track Your Order</h4>
 
-<div class="container mb-3">
-  <div class="d-flex bg-light justify-content-around"  style="height: 300px; width: auto; margin-left: -100px; margin-right: -100px">
-    <h3>Track Your Order</h3>
-    <div class="">
-      <form class="order-track">
-        <input type="text" placeholder="Enter Your Order ID">
-        <button class="track" [formAction]="'/home'">Track</button>
-      </form>
+<section class="form-section mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4 class="text-left border-bottom border-primary">Track Your Order By ID</h4>
+        <form action="">
+          <div class="form-row mt-4">
+            <div class="form-group col-md-12">
+              <h6>Order ID</h6>
+              <input type="text" class="form-control" placeholder="Enter Your Order ID *">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-left border-bottom border-primary">Track Your Order By Phone Number</h4>
+        <form action="">
+          <div class="form-row mt-4">
+            <div class="form-group col-md-12">
+              <h6>Your Phone Number</h6>
+              <input type="text" class="form-control" placeholder="Enter Your Phone Number *">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </form>
+      </div>
     </div>
   </div>
-  </div>
-
+</section>

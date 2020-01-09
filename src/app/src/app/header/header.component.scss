@@ -1,3 +1,4 @@
+/*
 .active-link {
   color: black !important;
   background-color: yellow;
@@ -27,7 +28,7 @@
 }
 
 
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+!* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other *!
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -140,3 +141,4 @@
       border-radius: 8px;
     }
 }
+*/

@@ -2,11 +2,13 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb my-2 px-0 bg-white">
       <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><a href="/categories">Categories</a> </li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="/categories">Categories</a></li>
     </ol>
   </nav>
 </div>
 
+
+<!--
 <ul class="categories-list">
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Category 1</a>
@@ -44,3 +46,67 @@
 <div>
   <img class="categories-image" [src]="'/assets/gadgets.jpeg'">
 </div>
+-->
+
+
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-12 col-md-4" *ngFor="let item of categories">-->
+<!--      {{item.title}}-->
+<!--      <img [src]="item.imageUrl">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="container">
+<div class="card-deck">
+  <div class="card" *ngFor="let item of categories">
+    <img class="card-img-top" [src]="item.imageUrl" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <p class="card-text">{{item.description}}</p>
+      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+</div>-->
+
+
+<!--
+
+<div class="container">
+  <h2>Bootstrap Cards Varation: </h2>
+  <h3>Same Aspect Ratio ―</h3>
+  <div class="row mb-5">
+    <div class="col-12 col-md-4">
+      <div class="card" *ngFor="let item of categories">
+        <img [src]="item.imageUrl" class="card-img-top" alt="category_pic">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="container my-2">
+  <div class="row">
+    <div class="col-12 col-md-4 mt-3" *ngFor="let item of categories">
+      <div class="card border border-danger">
+        <img class="card-img-top img-thumbnail" [src]="item.imageUrl" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <a routerLink="/inventory" class="btn btn-sm btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
