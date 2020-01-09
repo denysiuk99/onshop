@@ -7,6 +7,8 @@ import {InventoryPageComponent} from './inventory';
 import {ContactUsPageComponent} from './contact-us/contact-us-page.component';
 import {TrackOrderPageComponent} from './track-order/track-order-page.component';
 import {MyAccountPageComponent} from './my-account/my-account-page.component';
+import {ProductDetailsPageComponent} from './product-details';
+import {CartPageComponent} from './cart';
 
 export const routes: Routes = [
   {
@@ -36,6 +38,14 @@ export const routes: Routes = [
       {
         path: 'my-account',
         component: MyAccountPageComponent
+      },
+      {
+        path: 'inventory/product',
+        component: ProductDetailsPageComponent
+      },
+      {
+        path: 'cart',
+        component: CartPageComponent
       }
     ]
   }

@@ -2,13 +2,27 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb my-2 px-0 bg-white">
       <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><a href="/inventory">Shop</a> </li>
+      <li class="breadcrumb-item active" aria-current="page"><a href="/inventory">Shop</a></li>
     </ol>
   </nav>
 </div>
 
-<div class="container mb-3">
-  <div class="d-flex bg-light justify-content-center align-items-center" style="height: 1500px; width: auto; margin-left: -100px; margin-right: -100px">
-    <h3>Shop</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4 mt-3" *ngFor="let item of inventory">
+      <div class="card">
+        <img class="card-img-top " [src]="item.imageUrl" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <h6 class="card-text">{{item.price}}</h6>
+          <a routerLink="/inventory/product" class="btn btn-sm btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

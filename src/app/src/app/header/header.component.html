@@ -1,3 +1,5 @@
+
+<!--
   <a routerLink="/">Welcome To DenSH</a>
   <div class="float-right">
     <a routerLink="/track-order" [routerLinkActive]="'active-link'">Track Your Order</a>
@@ -33,8 +35,9 @@
     <button class="search-btn" type="button">Search</button>
   </div>
 </form>
+-->
 
-
+<!--
 <div class="d-flex  border-bottom">
   <div class="container-fluid bg-light ">
     <div class="row">
@@ -67,7 +70,8 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
+
 
 <!--
 
@@ -96,8 +100,6 @@
         </ul>
       </div>
     </div>-->
-
-
 
 
 <!--
@@ -149,3 +151,101 @@ Responsive menu
   </button>
 </nav>
 -->
+
+<!--
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img [src]="'/assets/logo.png'" style="height: 50px; width: 70px" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    &lt;!&ndash; navbar1 &ndash;&gt;
+    <div class="collapse navbar-collapse flex-column align-items-start" id="navbarCollapse">
+
+      <ul class="navbar-nav mt-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/inventory">Shop</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="/categories">Categories</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact-us">Contact Us</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="collapse navbar-collapse flex-column align-items-start" id="navbarCollapse">
+
+      &lt;!&ndash; navbar2 &ndash;&gt;
+
+      <div class="navbar-nav mb-lg-0">
+        <a class="nav-item nav-link" routerLink="/track-order">Track Your Order</a>
+        <a class="nav-item nav-link" routerLink="/my-account">My-Account</a>
+
+      </div>
+    </div>
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">
+          <i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand mr-5" href="#">DenSH</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/categories">Categories</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/inventory">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact-us">Contact Us</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/track-order">Track Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/my-account">My Account</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link" routerLink="/cart"><i class="material-icons">shopping_cart</i></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 ml-3">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search.." aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

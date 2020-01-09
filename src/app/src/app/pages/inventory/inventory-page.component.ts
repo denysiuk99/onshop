@@ -6,6 +6,32 @@ import {Component} from '@angular/core';
   templateUrl: './inventory-page.component.html'
 })
 
-export class InventoryPageComponent{
-
+export class InventoryPageComponent {
+  /// constants
+  public inventory = [
+    {
+      title: 'Product_Name',
+      description: 'test-description',
+      imageUrl: 'https://source.unsplash.com/random/1920x1080',
+      price: '22.44$'
+    },
+    {
+      title: 'Product_Name',
+      description: 'test-description',
+      imageUrl: 'https://source.unsplash.com/random/1920x1080',
+      price: '22.44$'
+    },
+    {
+      title: 'Product_Name',
+      description: 'test-description',
+      imageUrl: 'https://source.unsplash.com/random/1920x1080',
+      price: '22.44$'
+    },
+    {
+      title: 'Product_Name',
+      description: 'test-description',
+      imageUrl: 'https://source.unsplash.com/random/1920x1080',
+      price: '22.44$'
+    }
+  ];
 }
