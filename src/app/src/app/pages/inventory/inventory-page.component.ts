@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Product} from '../../../_core';
+import {ShopRepository} from '../../../_data/repository';
 
 @Component({
   selector: 'app-inventory-page',
@@ -7,31 +10,17 @@ import {Component} from '@angular/core';
 })
 
 export class InventoryPageComponent {
-  /// constants
-  public inventory = [
-    {
-      title: 'Product_Name',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080',
-      price: '22.44$'
-    },
-    {
-      title: 'Product_Name',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080',
-      price: '22.44$'
-    },
-    {
-      title: 'Product_Name',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080',
-      price: '22.44$'
-    },
-    {
-      title: 'Product_Name',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080',
-      price: '22.44$'
-    }
-  ];
+  /// fields
+  public products: Array<Product> = [];
+
+  /// predicates
+  public isLoaded = false;
+
+
+  /// constructor
+  constructor(private route: ActivatedRoute, private test: ShopRepository) {
+    this.route.params.subscribe((data) => {
+      this.products = this.test.getProducts(Number(data.categoryId));
+    });
+  }
 }
