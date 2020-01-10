@@ -4,5 +4,6 @@ import {Component} from '@angular/core';
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html'
 })
+
 export class CartPageComponent {
 }

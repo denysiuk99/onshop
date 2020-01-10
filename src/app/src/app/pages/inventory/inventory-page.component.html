@@ -9,12 +9,22 @@
 
 
 <div class="container">
-  <div class="row">
-    <div class="col-12 col-md-4 mt-3" *ngFor="let item of inventory">
-      <div class="card">
-        <img class="card-img-top " [src]="item.imageUrl" alt="Card image cap">
+<!--
+ {{products | json}}
+-->
+  <div class="row" >
+    <div class="col-12 col-md-4 mt-3" *ngFor="let item of products">
+      <div class="card border-success">
+        <img class="card-img-top img-thumbnail" [src]="item.imageUrl" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{item.title}}</h5>
+          <div class="card-header-pills">
+            <a routerLink="/categories">
+              <h6 class="card-title">{{item.categoryId}}</h6>
+            </a>
+          </div>
+          <a routerLink="/">
+            <h5 class="card-title">{{item.title}}</h5>
+          </a>
           <p class="card-text">{{item.description}}</p>
           <h6 class="card-text">{{item.price}}</h6>
           <a routerLink="/inventory/product" class="btn btn-sm btn-primary">Go somewhere</a>

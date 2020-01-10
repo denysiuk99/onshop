@@ -9,8 +9,9 @@ import {ContactUsPageComponent} from './contact-us/contact-us-page.component';
 import {TrackOrderPageComponent} from './track-order/track-order-page.component';
 import {MyAccountPageComponent} from './my-account/my-account-page.component';
 import {ThemeModule} from './theme.module';
-import {ProductDetailsPageComponent} from './product-details';
-import {CartPageComponent} from './cart';
+import {ProductDetailsPageComponent} from './product-details/product-details-page.component';
+import {CartPageComponent} from './cart/cart-page.component';
+import {RepositoryModule} from '../../_data/repository';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {CartPageComponent} from './cart';
 
     /// app modules
     ThemeModule,
+    RepositoryModule,
 
     /// routing
     AppPagesRouting
