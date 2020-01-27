@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {FooterComponent} from '../footer';
 
+
 @NgModule({
   declarations:[
     HeaderComponent,

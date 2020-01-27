@@ -1,10 +1,20 @@
-<div class="container mt-4">
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb my-2 px-0 bg-white">
+      <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Shop</li>
+    </ol>
+  </nav>
+</div>
+
+<!--{{cartService.getItems | json}}-->
+<div class="container my-3" >
   <div class="row">
-    <div class="col-md-6">
-      <img class="img-thumbnail" src="https://source.unsplash.com/random/1920x1080">
+    <div class="col-md-6" *ngFor="let item of products">
+      <img class="card-img-top img-thumbnail" [src]="item.imageUrl" alt="Card image cap">
     </div>
-    <div class="col-md-6">
-      <h2>Product Name With Details</h2>
+    <div class="col-md-6" *ngFor="let item of products">
+      <h2>{{item.title}}</h2>
       <div class="row">
         <div class="col-md-12">
           <span class="label label-primary">Product </span>
@@ -14,26 +24,26 @@
       <div class="row">
         <div class="col-md-12 mt-2">
           <p class="description">
-            Full Product Description With Different Details.
+            {{item.description}}
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 bottom-rule">
-          <h2 class="product-price">$129.00</h2>
+          <h2 class="product-price">{{item.price | currency}}</h2>
         </div>
       </div>
       <div class="row add-to-cart">
-        <div class="col-md-3">
-          <input class="btn-lg" type="number" min="1" value="1" style="width: 100px">
-        </div>
+        <!--<div class="col-md-3">
+          <input class="btn-lg" type="number" min="1" max="5" value="1" style="width: 75px">
+        </div>-->
         <div class="col-md-9">
-          <button class="btn btn-primary btn-lg btn-brand" style="width: 150px">
+          <button class="btn btn-primary btn-lg btn-brand" style="width: 150px"  (click)="addToCart(item)">
             Add to Cart
           </button>
         </div>
       </div>
-
     </div>
   </div>
 </div>
+

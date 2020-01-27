@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {CartService} from '../../_core/cart';
+import {CartItemEntity} from '../../_core/cart';
 
 @Component({
   selector: 'app-header-component',
@@ -6,4 +8,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  constructor(private cartService: CartService) {
+  }
 }
