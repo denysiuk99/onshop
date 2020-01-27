@@ -1,4 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, Injectable} from '@angular/core';
+import {InventoryPageComponent} from '../inventory';
+import {Categories, Product} from '../../../_core/entities';
+import {ActivatedRoute} from '@angular/router';
+import {ShopRepository} from '../../../_data/repository';
+import {mocks} from '../../../_data/repository/mock';
 
 @Component({
   selector: 'app-categories-page',
@@ -6,38 +11,35 @@ import {Component} from '@angular/core';
   styleUrls: ['./categories-page.component.scss']
 })
 
+
 export class CategoriesPageComponent {
   /// constants
-  public categories = [
-    {
-      title: 'category1',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080'
-    },
-    {
-      title: 'category2',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080'
-    },
-    {
-      title: 'category3',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080'
-    },
-    {
-      title: 'category4',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080',
-      product:{
-        title: 'PRO',
-        description: 'SOMETHING',
-        imageUrl: 'https://source.unsplash.com/random/1920x1080'
-      }
-    },
-    {
-      title: 'category5',
-      description: 'test-description',
-      imageUrl: 'https://source.unsplash.com/random/1920x1080'
-    }
-  ];
+  public categories: Array<Categories> = [];
+
+  /// constructor
+  constructor(private route: ActivatedRoute, private test: ShopRepository) {
+  this.categories = mocks.categories;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

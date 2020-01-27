@@ -4,11 +4,12 @@ import {HomePageComponent} from './home';
 import {ModuleWithProviders} from '@angular/core';
 import {CategoriesPageComponent} from './categories';
 import {InventoryPageComponent} from './inventory';
-import {ContactUsPageComponent} from './contact-us/contact-us-page.component';
-import {TrackOrderPageComponent} from './track-order/track-order-page.component';
-import {MyAccountPageComponent} from './my-account/my-account-page.component';
+import {ContactUsPageComponent} from './contact-us';
+import {TrackOrderPageComponent} from './track-order';
+import {MyAccountPageComponent} from './my-account';
 import {ProductDetailsPageComponent} from './product-details';
 import {CartPageComponent} from './cart';
+import {CheckoutPageComponent} from './checkout';
 
 export const routes: Routes = [
   {
@@ -40,12 +41,16 @@ export const routes: Routes = [
         component: MyAccountPageComponent
       },
       {
-        path: 'inventory/product',
+        path: 'product/:productId',
         component: ProductDetailsPageComponent
       },
       {
         path: 'cart',
         component: CartPageComponent
+      },
+      {
+        path: 'checkout',
+        component: CheckoutPageComponent
       }
     ]
   }

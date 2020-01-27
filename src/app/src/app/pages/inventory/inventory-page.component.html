@@ -2,35 +2,31 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb my-2 px-0 bg-white">
       <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><a href="/inventory">Shop</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Shop</li>
     </ol>
   </nav>
 </div>
 
 
 <div class="container">
-<!--
- {{products | json}}
--->
-  <div class="row" >
+  <!--
+   {{products | json}}
+  -->
+  <div class="row">
     <div class="col-12 col-md-4 mt-3" *ngFor="let item of products">
       <div class="card border-success">
         <img class="card-img-top img-thumbnail" [src]="item.imageUrl" alt="Card image cap">
         <div class="card-body">
           <div class="card-header-pills">
             <a routerLink="/categories">
-              <h6 class="card-title">{{item.categoryId}}</h6>
+              <h6 routerLink="/categories" class="card-title">{{item.categoryId}}</h6>
             </a>
           </div>
-          <a routerLink="/">
-            <h5 class="card-title">{{item.title}}</h5>
-          </a>
+          <h5 class="card-title text-center">{{item.title}}</h5>
           <p class="card-text">{{item.description}}</p>
-          <h6 class="card-text">{{item.price}}</h6>
-          <a routerLink="/inventory/product" class="btn btn-sm btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
+          <h6 class="card-text">{{item.price | currency}}</h6>
+          <a class="btn  btn-primary float-left text-white " (click)="productClick(item.productId)" style="width: 150px">Show More</a>
+          <button class="btn  btn-success float-right " (click)="addToCart(item)" style="width: 150px">Buy NOW</button>
         </div>
       </div>
     </div>

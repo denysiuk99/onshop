@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {from, Observable} from 'rxjs';
-import {Product} from '../../_core';
 import {mocks} from './mock';
+import {Categories, Product} from '../../_core/entities';
 
 @Injectable()
 export class ShopRepository {
@@ -18,7 +18,16 @@ export class ShopRepository {
         products.push(item);
       }
     }
+    return products;
+  }
 
+  public getProduct(productId: number): Array<Product> {
+    const products = [];
+    for (const item of mocks.products) {
+      if (item.productId === productId) {
+        products.push(item);
+      }
+    }
     return products;
   }
 }

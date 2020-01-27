@@ -4,14 +4,17 @@ import {CommonModule} from '@angular/common';
 import {AppPagesRouting} from './app-pages.routing';
 import {AppPagesComponent} from './app-pages.component';
 import {CategoriesPageComponent} from './categories';
-import {InventoryPageComponent} from './inventory/inventory-page.component';
-import {ContactUsPageComponent} from './contact-us/contact-us-page.component';
-import {TrackOrderPageComponent} from './track-order/track-order-page.component';
-import {MyAccountPageComponent} from './my-account/my-account-page.component';
+import {InventoryPageComponent} from './inventory';
+import {ContactUsPageComponent} from './contact-us';
+import {TrackOrderPageComponent} from './track-order';
+import {MyAccountPageComponent} from './my-account';
 import {ThemeModule} from './theme.module';
-import {ProductDetailsPageComponent} from './product-details/product-details-page.component';
-import {CartPageComponent} from './cart/cart-page.component';
-import {RepositoryModule} from '../../_data/repository';
+import {ProductDetailsPageComponent} from './product-details';
+import {CartPageComponent} from './cart';
+import {RepositoryModule} from '../../_data';
+import {CartModule} from '../../_core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CheckoutPageComponent} from './checkout';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,22 @@ import {RepositoryModule} from '../../_data/repository';
     MyAccountPageComponent,
     TrackOrderPageComponent,
     ProductDetailsPageComponent,
-    CartPageComponent
-
+    CartPageComponent,
+    CheckoutPageComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+
 
     /// app modules
     ThemeModule,
+    RepositoryModule,
+
+    /// core
+    CartModule,
+
+    /// data
     RepositoryModule,
 
     /// routing

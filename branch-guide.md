@@ -1,4 +1,4 @@
-# OnShop - BRANCH GUIDE
+# DenSH - BRANCH GUIDE
 
 Following are the most important branches:
 
