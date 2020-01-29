@@ -10,6 +10,7 @@ import {MyAccountPageComponent} from './my-account';
 import {ProductDetailsPageComponent} from './product-details';
 import {CartPageComponent} from './cart';
 import {CheckoutPageComponent} from './checkout';
+import {OrderNumberPageComponent} from './order-number';
 
 export const routes: Routes = [
   {
@@ -51,6 +52,10 @@ export const routes: Routes = [
       {
         path: 'checkout',
         component: CheckoutPageComponent
+      },
+      {
+        path: 'order-number',
+        component: OrderNumberPageComponent
       }
     ]
   }

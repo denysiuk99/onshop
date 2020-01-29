@@ -1,25 +1,63 @@
 <div class="home-pic d-flex">
   <div class="text-center justify-content-center">
-    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+    <h2>Welcome to <span class="text-danger">DenSH</span></h2>
     <button routerLink="/categories" class="btn btn-primary rounded-pill mt-5">Let's GO</button>
   </div>
 </div>
 
-
-
-
-<div class="container mt-3">
-  <div class="d-flex bg-light justify-content-center align-items-center" style="height: 300px">
-  <h3><a routerLink="/inventory">Future Products</a></h3>
+<div class="container">
+  <div class="row py-5">
+    <div class="col-md-4 mb-4">
+      <div class="text-center px-lg-3">
+        <span class="icon icon-primary icon-lg mb-3">
+          <i class="material-icons">important_devices</i></span>
+        <h2 class="h4">Lease products</h2>
+        <p class="mb-md-0">The quick brown fox jumps over the lazy dog contains all of the letters of the alphabet. </p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="text-center px-lg-3">
+        <span class="icon icon-primary icon-lg mb-3"><i class="material-icons">important_devices</i></span>
+        <h2 class="h4">Schedule Delivery</h2>
+        <p class="mb-md-0">The quick brown fox jumps over the lazy dog contains all of the letters of the alphabet.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="text-center px-lg-3">
+        <span class="icon icon-primary icon-lg mb-3"><i class="material-icons">important_devices</i></span>
+        <h2 class="h4">Track your Order</h2>
+        <p class="mb-md-0">The quick brown fox jumps over the lazy dog contains all of the letters of the alphabet.</p>
+      </div>
+    </div>
   </div>
 </div>
-<div class="container mt-3">
-  <div class="d-flex bg-light justify-content-center align-items-center" style="height: 300px">
-  <h3><a routerLink="/contact-us">Company info</a></h3>
+
+<div class="container mt-5">
+  <h2 class="content-title mb-2">New Arrivals</h2>
+  <div class="products-carousel owl-carousel owl-theme" >
+    <div class="item" *ngFor="let item of products">
+      <a class="text-decoration-none category-item" [routerLink]="'/inventory/' + item.productId">
+        <div class="img-wrap">
+          <img
+            [src]="'https://source.unsplash.com/random/1920x1080'">
+        </div>
+        <h6 class="mt-1">{{item.title}}</h6>
+      </a>
+    </div>
   </div>
 </div>
-<div class="container mt-3 my-3">
-  <div class="d-flex bg-light justify-content-center align-items-center" style="height: 300px">
-  <h3><a routerLink="/categories">Categories</a></h3>
+
+<div class="container mb-5 mt-5">
+  <h2 class="content-title mb-2">Categories</h2>
+  <div class="categories-carousel owl-carousel owl-theme" >
+    <div class="item" *ngFor="let item of categories">
+      <a class="text-decoration-none category-item" [routerLink]="'/inventory/' + item.id">
+        <div class="img-wrap">
+          <img
+            [src]="'https://source.unsplash.com/random/1920x1080'">
+        </div>
+        <h6 class="mt-1">{{item.title}}</h6>
+      </a>
+    </div>
   </div>
 </div>

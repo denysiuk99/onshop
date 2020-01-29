@@ -19,14 +19,14 @@
         <div class="card-body">
           <div class="card-header-pills">
             <a routerLink="/categories">
-              <h6 routerLink="/categories" class="card-title">{{item.categoryId}}</h6>
+             <h6 routerLink="/categories" class="card-title">{{item.categoryId}}</h6>
             </a>
           </div>
           <h5 class="card-title text-center">{{item.title}}</h5>
           <p class="card-text">{{item.description}}</p>
           <h6 class="card-text">{{item.price | currency}}</h6>
-          <a class="btn  btn-primary float-left text-white " (click)="productClick(item.productId)" style="width: 150px">Show More</a>
-          <button class="btn  btn-success float-right " (click)="addToCart(item)" style="width: 150px">Buy NOW</button>
+          <button class="btn btn-primary float-left text-white" (click)="productClick(item.productId)">Show More</button>
+          <button class="btn  btn-success float-right" (click)="addToCart(item)">Buy NOW</button>
         </div>
       </div>
     </div>

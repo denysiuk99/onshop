@@ -20,14 +20,17 @@ export class CartService {
     for (const item of this._items) {
       count += item.count;
     }
-
     return count;
   }
 
   get getItems(): Array<CartItemEntity> {
     return this._items;
   }
-
+  constructor() {
+    const items = JSON.parse(localStorage.getItem('CART_KEY'));
+    this._items = items ? items : [];
+    this._itemsPrice = this.calculatePrice(this._items);
+  }
   public addItem(item: CartItemEntity, amount: number = 1) {
 
     item.count = amount;
@@ -42,6 +45,7 @@ export class CartService {
       this._items.push(item);
     }
     this._itemsPrice = this.calculatePrice(this._items);
+    localStorage.setItem('CART_KEY', JSON.stringify(this._items));
   }
 
   private calculatePrice(items: Array<CartItemEntity>): number {
@@ -57,12 +61,14 @@ export class CartService {
     if (index > -1) {
       this._items.splice(index, 1);
       this._itemsPrice = this.calculatePrice(this._items);
+      localStorage.setItem('CART_KEY', JSON.stringify(this._items));
     }
   }
 
   public clearCart() {
     this._items = [];
     this._itemsPrice = 0;
+    localStorage.setItem('CART_KEY', JSON.stringify([]));
   }
 }
 

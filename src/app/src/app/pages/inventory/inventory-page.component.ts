@@ -2,7 +2,7 @@ import {Component, Injectable} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ShopRepository} from '../../../_data';
 import {Product} from '../../../_core/entities';
-import {CartService} from '../../../_core/cart';
+import {CartService} from '../../../_core';
 import {AppMapper} from '../../_mapper';
 
 @Component({

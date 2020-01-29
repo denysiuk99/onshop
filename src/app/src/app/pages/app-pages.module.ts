@@ -15,6 +15,8 @@ import {RepositoryModule} from '../../_data';
 import {CartModule} from '../../_core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CheckoutPageComponent} from './checkout';
+import {OrderNumberPageComponent} from './order-number';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {CheckoutPageComponent} from './checkout';
     TrackOrderPageComponent,
     ProductDetailsPageComponent,
     CartPageComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    OrderNumberPageComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +40,7 @@ import {CheckoutPageComponent} from './checkout';
     /// app modules
     ThemeModule,
     RepositoryModule,
+    ReactiveFormsModule,
 
     /// core
     CartModule,
@@ -46,6 +50,7 @@ import {CheckoutPageComponent} from './checkout';
 
     /// routing
     AppPagesRouting
+
   ],
   exports: [],
   providers: []

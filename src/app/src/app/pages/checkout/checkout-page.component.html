@@ -1,0 +1,68 @@
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb my-2 px-0 bg-white">
+      <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+    </ol>
+  </nav>
+</div>
+
+<form [formGroup]="form" [hidden] = "isShown">
+  <div class="container">
+
+    <div class="form-row mt-2">
+      <div class="col-md-4 mb-3">
+        <label> First name</label>
+        <input type="text" class="form-control firstName"
+               formControlName="firstName" pattern="[a-zA-Z ]*"
+               [ngClass]="{'is-valid': validationHelper.isValid('firstName',form), 'is-invalid': validationHelper.isInvalid('firstName',form)}"
+               placeholder="First name *">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>Last name</label>
+        <input type="text" class="form-control lastName" placeholder="Last name *"
+               formControlName="lastName" pattern="[a-zA-Z ]*"
+               [ngClass]="{'is-valid': validationHelper.isValid('lastName',form), 'is-invalid': validationHelper.isInvalid('lastName',form)}">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>Email</label>
+        <input type="text" class="form-control is-invalid"
+               formControlName="email"
+               [ngClass]="{'is-valid': validationHelper.isValid('email',form), 'is-invalid': validationHelper.isInvalid('email',form)}"
+               placeholder="Email address *">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label>City</label>
+        <input type="text" class="form-control" placeholder="City *"
+               formControlName="city"
+               [ngClass]="{'is-valid': validationHelper.isValid('city',form), 'is-invalid': validationHelper.isInvalid('city',form)}">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label>State</label>
+        <input type="text" class="form-control" placeholder="State *"
+               formControlName="state"
+               [ngClass]="{'is-valid': validationHelper.isValid('state',form), 'is-invalid': validationHelper.isInvalid('state',form)}">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label>Zip</label>
+        <input type="text" class="form-control" placeholder="Zip *"
+               formControlName="zipCode" pattern="[0-9]*" maxlength="5"
+               [ngClass]="{'is-valid': validationHelper.isValid('zipCode',form), 'is-invalid': validationHelper.isInvalid('zipCode',form)}">
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid" (click)="submit() && cartService.clearCart()">Confirm My Order</button>
+
+</div>
+</form>
+
+
+<div class="container mt-3" [hidden] = "!isShown">
+  <div class="d-flex bg-light justify-content-center align-items-start" style="height: 100px">
+    <h3 class="mt-5">Your Order Number Is:</h3>
+  </div>
+  <div class="d-flex bg-light justify-content-center align-items-start mb-0" style="height: 300px">
+    <div class="mt-4" style="font-size: x-large">{{getOrderNumber()}}</div>
+  </div>
+</div>
