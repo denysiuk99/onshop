@@ -2,7 +2,15 @@ export const mocks = {
   products: [
     {
       categoryId: 1,
-      title: 'Product_Name',
+      title: 'Product_Name_1',
+      description: 'test-description',
+      imageUrl: 'https://source.unsplash.com/random/1920x1080',
+      price: 131.22,
+      productId: 1
+    },
+    {
+      categoryId: 1,
+      title: 'Product_Name_2',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 11.22,
@@ -10,7 +18,7 @@ export const mocks = {
     },
     {
       categoryId: 1,
-      title: 'Product_Name',
+      title: 'Product_Name_3',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 22.44,
@@ -18,7 +26,7 @@ export const mocks = {
     },
     {
       categoryId: 2,
-      title: 'Product_Name',
+      title: 'Product_Name_4',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 44.03,
@@ -26,7 +34,7 @@ export const mocks = {
     },
     {
       categoryId: 2,
-      title: 'Product_Name',
+      title: 'Product_Name_5',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 100.00,
@@ -34,7 +42,7 @@ export const mocks = {
     },
     {
       categoryId: 2,
-      title: 'Product_Name',
+      title: 'Product_Name_6',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 24.10,
@@ -42,7 +50,7 @@ export const mocks = {
     },
     {
       categoryId: 3,
-      title: 'Product_Name',
+      title: 'Product_Name_7',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 696.24,
@@ -50,7 +58,7 @@ export const mocks = {
     },
     {
       categoryId: 3,
-      title: 'Product_Name',
+      title: 'Product_Name_8',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 599.99,
@@ -58,7 +66,7 @@ export const mocks = {
     },
     {
       categoryId: 3,
-      title: 'Product_Name',
+      title: 'Product_Name_9',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 14.88,
@@ -66,7 +74,7 @@ export const mocks = {
     },
     {
       categoryId: 4,
-      title: 'Product_Name',
+      title: 'Product_Name_10',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 15.94,
@@ -74,7 +82,7 @@ export const mocks = {
     },
     {
       categoryId: 4,
-      title: 'Product_Name',
+      title: 'Product_Name_11',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 22.44,
@@ -82,7 +90,7 @@ export const mocks = {
     },
     {
       categoryId: 4,
-      title: 'Product_Name',
+      title: 'Product_Name_12',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 22.44,
@@ -90,7 +98,7 @@ export const mocks = {
     },
     {
       categoryId: 5,
-      title: 'Product_Name',
+      title: 'Product_Name_13',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 17.12,
@@ -98,7 +106,7 @@ export const mocks = {
     },
     {
       categoryId: 5,
-      title: 'Product_Name',
+      title: 'Product_Name_14',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 85.94,
@@ -106,7 +114,7 @@ export const mocks = {
     },
     {
       categoryId: 5,
-      title: 'Product_Name',
+      title: 'Product_Name_15',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 22.44,
@@ -114,7 +122,7 @@ export const mocks = {
     },
     {
       categoryId: 6,
-      title: 'Product_Name',
+      title: 'Product_Name_16',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 22.44,
@@ -122,7 +130,7 @@ export const mocks = {
     },
     {
       categoryId: 6,
-      title: 'Product_Name',
+      title: 'Product_Name_17',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 22.44,
@@ -130,7 +138,7 @@ export const mocks = {
     },
     {
       categoryId: 6,
-      title: 'Product_Name',
+      title: 'Product_Name_18',
       description: 'test-description',
       imageUrl: 'https://source.unsplash.com/random/1920x1080',
       price: 22.44,

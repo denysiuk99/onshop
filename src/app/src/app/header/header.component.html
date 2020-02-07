@@ -26,16 +26,47 @@
       </li>
 
       <li class="nav-item pl-4 searchbar__icons" >
-        <a class="nav-link icon-item text-decoration-none position-relative" routerLink="/cart">
+        <a class="nav-link icon-item text-decoration-none position-relative" [routerLink]="'/cart'" >
           <i class="icon material-icons">shopping_cart</i>
           <span class="cart-items-count">{{cartService.itemsCount}}</span>
           <span class="font-weight-500 ml-4">{{!cartService.totalPrice ? '0.00' : cartService.totalPrice }} $</span>
         </a>
       </li>
+     <!-- <li class="nav-item" >
+        <input class="mr-2" type="text" [(ngModel)]="search" >
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </li>-->
+      <div class="dropdown" >
+        <input class="form-control mr-sm-2" type="text" [(ngModel)]="search">
+        <div *ngFor="let product of products | filter:search" [hidden]="search == ''"
+             class="dropdown-content ">
+
+          <a [routerLink]="'/product/' + product.productId">{{product.title}}</a>
+        </div>
+      </div>
     </ul>
+<!--
     <form class="form-inline my-2 my-lg-0 ml-3" >
-      <input class="form-control mr-sm-2" type="search" placeholder="Search.." aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+-->
+     <!-- <input class="form-control mr-sm-2 w-25" type="text" [(ngModel)]="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="showSearchResult()">Search</button>-->
+<!--
     </form>
+-->
   </div>
+
 </nav>
+<!--
+
+<div class="dropdown" >
+  <input class="form-control mr-sm-2" type="text" [(ngModel)]="search">
+  <div *ngFor="let product of products | filter:search"
+       class="dropdown-content " [hidden]="search == ''">
+
+    <a [routerLink]="'/product/' + product.productId">{{product.title}}</a>
+  </div>
+</div>
+-->
+
+
+
