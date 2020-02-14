@@ -46,27 +46,14 @@ export class CheckoutPageComponent {
     });
   }
 
-/*
+  isShown = false;
 
-  get first(): any {
-    return this.form.get('first');
-  }*/
-isShown = false;
-
-submit() {
-this.isShown = !this.isShown;
-const x = ('AH ') + Math.floor(+ (Math.random() * 1000000 ) + 1000);
-return x;
+  public submit() {
+    this.isShown = !this.isShown;
   }
 
-
-/*
-  setValue() {
-    this.form.setValue({first: 'Carson', last: 'Drew'});
-  }*/
-
   public getOrderNumber() {
-    return ('AH ') + Math.floor(+ (Math.random() * 1000000 ) + 1000);
+    return ('AH ') + Math.floor(+(Math.random() * 1000000) + 1000);
   }
 }
 

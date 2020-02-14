@@ -52,7 +52,7 @@
                [ngClass]="{'is-valid': validationHelper.isValid('zipCode',form), 'is-invalid': validationHelper.isInvalid('zipCode',form)}">
       </div>
     </div>
-    <button class="btn btn-primary" type="submit" [disabled]="form.invalid" (click)="submit() && cartService.clearCart()">Confirm My Order</button>
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid" (click)="submit(); cartService.clearCart();">Confirm My Order</button>
 
 </div>
 </form>

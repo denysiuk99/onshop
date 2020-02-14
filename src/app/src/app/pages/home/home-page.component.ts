@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {Categories, Product} from '../../../_core/entities';
 import {ShopRepository} from '../../../_data/repository';
+import {mocks} from '../../../_data/repository/mock';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -14,7 +16,12 @@ export class HomePageComponent {
   /// predicate
   public didLoaded = false;
 
-  constructor(private shopRepository: ShopRepository) {
+  constructor(private router: Router, private shopRepository: ShopRepository) {
+    this.products = mocks.products;
+    this.categories = mocks.categories;
   }
+  /*public productClick(productId: number) {
+    this.router.navigate([`product/${productId}`]);
+  }*/
 
 }

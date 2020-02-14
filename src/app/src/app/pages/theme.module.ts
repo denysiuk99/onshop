@@ -4,12 +4,14 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {FooterComponent} from '../footer';
+import {FilterPipe} from '../pipes/filter.pipe';
 
 
 @NgModule({
   declarations:[
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   imports: [
     /// angular modules

@@ -7,11 +7,9 @@
   </nav>
 </div>
 
+<!--
 
 <div class="container">
-  <!--
-   {{products | json}}
-  -->
   <div class="row">
     <div class="col-12 col-md-4 mt-3" *ngFor="let item of products">
       <div class="card border-success">
@@ -19,14 +17,74 @@
         <div class="card-body">
           <div class="card-header-pills">
             <a routerLink="/categories">
-             <h6 routerLink="/categories" class="card-title">{{item.categoryId}}</h6>
+              <h6 routerLink="/categories" class="card-title">{{item.categoryId}}</h6>
             </a>
           </div>
           <h5 class="card-title text-center">{{item.title}}</h5>
           <p class="card-text">{{item.description}}</p>
           <h6 class="card-text">{{item.price | currency}}</h6>
-          <button class="btn btn-primary float-left text-white" (click)="productClick(item.productId)">Show More</button>
-          <button class="btn  btn-success float-right" (click)="addToCart(item)">Buy NOW</button>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6">
+              <button class="btn btn-primary btn-lg btn-block text-white" (click)="productClick(item.productId)">Show
+                More
+              </button>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 mt-sm-2 mt-md-0 mt-2">
+              <button class="btn btn-success btn-lg btn-block" (click)="addToCart(item)">Buy NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+-->
+
+
+<div class="container">
+  <div class="row" >
+    <div class="col-12 col-md-3 mt-2" *ngFor="let item of searchResult.items">
+      <div class="card">
+        <div class="card-img-top">
+          <img class="img-thumbnail" [src]="item.externalImages">
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <p class="card-title">{{item.title}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="card-title">Make: {{item.make}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="card-title">Model: {{item.model}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="card-title">Year: {{item.year}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="card-title">Price: {{item.price | currency}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6">
+              <button class="btn btn-primary btn-sm btn-block text-white" (click)="productClick(item.id)">Show
+                More
+              </button>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 mt-sm-2 mt-md-0 mt-2">
+              <button class="btn btn-success btn-sm btn-block" (click)="addToCart(item)">Buy NOW</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

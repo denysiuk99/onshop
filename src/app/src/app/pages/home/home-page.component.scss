@@ -1,4 +1,4 @@
-.home-pic{
+.home-pic {
   background: url(src/assets/bg-home.jpg);
   height: 450px;
   background-size: cover;
@@ -7,4 +7,17 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
- }
+}
+
+.zoom:hover {
+  transform: scale(0.9);
+}
+
+.animatedButton {
+  border-radius: 4px;
+  transition: border-radius 0.5s ease-in;
+}
+
+.animatedButton:hover {
+border-radius: 16px;
+}

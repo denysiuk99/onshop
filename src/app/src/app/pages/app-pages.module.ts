@@ -16,6 +16,8 @@ import {CartModule} from '../../_core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CheckoutPageComponent} from './checkout';
 import {OrderNumberPageComponent} from './order-number';
+import {MatSliderModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import {OrderNumberPageComponent} from './order-number';
     ThemeModule,
     RepositoryModule,
     ReactiveFormsModule,
+    MatSliderModule,
+    HttpClientModule,
 
     /// core
     CartModule,
