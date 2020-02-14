@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ShopRepository} from '../../../_data/repository';
 import {CartService} from '../../../_core/cart';
 import {AppMapper} from '../../_mapper';
+import {Vehicle} from '../inventory';
 
 @Component({
   selector: 'app-product-details-page',
@@ -20,7 +21,7 @@ export class ProductDetailsPageComponent {
     });
   }
 
-  public addToCart(item: Product) {
+  public addToCart(item: Vehicle) {
     this.cartService.addItem(AppMapper.toCartItem(item));
   }
 }

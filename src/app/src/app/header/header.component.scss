@@ -20,16 +20,14 @@
 }
 
 .dropdown {
-  position: relative;
   display: block;
   width: 200px;
 
   .dropdown-content {
-    position: absolute;
-    background-color: #f9f9f9;
     margin-top: 10px;
     width: 200px;
+    border: 1px dashed;
+    display:block;
+
   }
 }
-
-

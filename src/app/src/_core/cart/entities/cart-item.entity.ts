@@ -1,8 +1,10 @@
 export class CartItemEntity {
   id: number;
-  imageUrl: string;
+  externalImages: string;
   title: string;
   price: number;
+  model: string;
+  make: string;
+  year: number;
   count: number;
-  description: string;
 }

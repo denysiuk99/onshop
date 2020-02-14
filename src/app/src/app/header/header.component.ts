@@ -22,21 +22,6 @@ export class HeaderComponent {
     this.products = mocks.products;
   }
 
-  /*  showSearchResult() {
-      if (this.search.trim() === '') {
-
-        return this.showDropDown;
-  /!*
-        console.log('empty');
-  *!/
-      } else {
-        return !this.showDropDown;
-  /!*
-        console.log('not empty');
-  *!/
-      }*/
-
-
   showSearchResult() {
     if (this.search !== '') {
       return !this.showDropDown;
