@@ -1,8 +1,8 @@
 export class Product {
-  categoryId: number;
+ /* categoryId: number;
   title: string;
   description: string;
   imageUrl: string;
   price: number;
-  productId: number;
+  productId: number;*/
 }

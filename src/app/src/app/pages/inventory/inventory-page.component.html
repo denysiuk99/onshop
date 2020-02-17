@@ -8,7 +8,6 @@
 </div>
 
 <!--
-
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-4 mt-3" *ngFor="let item of products">
@@ -38,12 +37,10 @@
     </div>
   </div>
 </div>
-
 -->
 
-
 <div class="container">
-  <div class="row" >
+  <div class="row">
     <div class="col-12 col-md-3 mt-2" *ngFor="let item of searchResult.items">
       <div class="card">
         <div class="card-img-top">
@@ -77,11 +74,11 @@
           </div>
           <div class="row">
             <div class="col-12 col-sm-12 col-md-6">
-              <button class="btn btn-primary btn-sm btn-block text-white" (click)="productClick(item.id)">Show
+              <button class="btn btn-primary btn-sm btn-block text-white" (click)="productClick(item.vin)">Show
                 More
               </button>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 mt-sm-2 mt-md-0 mt-2">
+            <div class="col-12 col-sm-12 col-md-6 mt-sm-2 mt-md-0">
               <button class="btn btn-success btn-sm btn-block" (click)="addToCart(item)">Buy NOW</button>
             </div>
           </div>

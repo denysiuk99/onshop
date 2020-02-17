@@ -93,13 +93,13 @@ Products carousel
         <div class="row">
           <div class="col-12 col-md-3 mt-3" *ngFor="let item of products | slice: 0: 4">
             <div class="card border border-danger zoom">
-              <a [routerLink]="'/product/' + item.productId">
-                <img class="card-img-top img-thumbnail border border-bottom border-success" [src]="item.imageUrl"
+              <a [routerLink]="'/product/' + item.id">
+                <img class="card-img-top img-thumbnail border border-bottom border-success" [src]="item.externalImages"
                      alt="Card image cap">
               </a>
               <div class="card-body text-center">
                 <a>
-                  <h5 class="card-title">{{item.title}}</h5>
+                  <h5 class="card-title">{{item.make}}</h5>
                 </a>
               </div>
             </div>
@@ -110,13 +110,13 @@ Products carousel
         <div class="row">
           <div class="col-12 col-md-3 mt-3" *ngFor="let item of products | slice: 4: 8">
             <div class="card border border-danger zoom">
-              <a [routerLink]="'/product/' + item.productId">
-                <img class="card-img-top img-thumbnail border border-bottom border-success" [src]="item.imageUrl"
+              <a [routerLink]="'/product/' + item.id">
+                <img class="card-img-top img-thumbnail border border-bottom border-success" [src]="item.externalImages"
                      alt="Card image cap">
               </a>
               <div class="card-body text-center">
                 <a>
-                  <h5 class="card-title">{{item.title}}</h5>
+                  <h5 class="card-title">{{item.make}}</h5>
                 </a>
               </div>
             </div>
@@ -127,13 +127,13 @@ Products carousel
         <div class="row">
           <div class="col-12 col-md-3 mt-3" *ngFor="let item of products | slice: 8: 12">
             <div class="card border border-danger zoom">
-              <a [routerLink]="'/product/' + item.productId">
-                <img class="card-img-top img-thumbnail border border-bottom border-success" [src]="item.imageUrl"
+              <a [routerLink]="'/product/' + item.id">
+                <img class="card-img-top img-thumbnail border border-bottom border-success" [src]="item.externalImages"
                      alt="Card image cap">
               </a>
               <div class="card-body text-center">
                 <a>
-                  <h5 class="card-title">{{item.title}}</h5>
+                  <h5 class="card-title">{{item.make}}</h5>
                 </a>
               </div>
             </div>
@@ -152,3 +152,10 @@ Products carousel
   </div>
 </div>
 
+<div class="container">
+  <div class="row" *ngFor="let item of products">
+    <div class="col-12">
+      {{item.externalImages}}
+    </div>
+  </div>
+</div>
