@@ -5,7 +5,7 @@ import {ShopRepository} from '../../../_data/repository';
 import {CartService} from '../../../_core/cart';
 import {AppMapper} from '../../_mapper';
 import {HttpClient} from '@angular/common/http';
-import {SearchResult, Vehicle} from '../../../_data/models';
+import {Filter, SearchResult, Vehicle} from '../../../_data/models';
 
 @Component({
   selector: 'app-product-details-page',
@@ -13,25 +13,28 @@ import {SearchResult, Vehicle} from '../../../_data/models';
   templateUrl: './product-details-page.component.html'
 })
 export class ProductDetailsPageComponent implements OnInit {
-  public items: Array<Vehicle> = [];
-  public searchResult: SearchResult;
+  public vehicle: Vehicle;
+  public showSpinner = true;
 
   /// constructor
-  constructor(private route: ActivatedRoute, private test: ShopRepository, private cartService: CartService, private http: HttpClient) {
-    this.searchResult = new SearchResult();
-    this.route.params.subscribe((data) => {
-      this.items = this.test.getProduct(String(data.vin));
-    });
+  constructor(private route: ActivatedRoute, private shopRepository: ShopRepository, private cartService: CartService, private http: HttpClient) {
+    this.vehicle = new Vehicle();
   }
 
   ngOnInit() {
-    this.http.get(`https://dealeractive-api-prod.azurewebsites.net/cars/search/?vin=KNALT4D35H6035011`)
-      .subscribe(result => {
-        this.searchResult.mapFromDto(result);
-      });
+    this.route.params.subscribe((data) => {
+      this.http.get(`https://dealeractive-api-prod.azurewebsites.net/cars/search/?vin=${data.vin}`)
+        .subscribe(result => {
+          const searchResult = new SearchResult();
+          searchResult.mapFromDto(result);
+          this.vehicle = searchResult.items[0];
+          this.showSpinner = false;
+        });
+    });
   }
 
   public addToCart(item: Vehicle) {
     this.cartService.addItem(AppMapper.toCartItem(item));
   }
+
 }

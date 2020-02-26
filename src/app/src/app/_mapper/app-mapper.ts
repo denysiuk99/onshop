@@ -1,5 +1,5 @@
 import {CartItemEntity, Product} from '../../_core';
-import {Vehicle} from '../pages/inventory';
+import {Vehicle} from '../../_data/models';
 
 export class AppMapper {
 /*  public static toCartItem(entity: Product): CartItemEntity {

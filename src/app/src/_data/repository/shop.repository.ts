@@ -23,7 +23,7 @@ export class ShopRepository {
     return products;
   }
 
-  public getProduct(vin: string): Array<Vehicle> {
+/*  public getProduct(vin: string): Array<Vehicle> {
     const items = [];
     for (const item of Array<Vehicle>()) {
       if (item.vin === vin) {
@@ -31,5 +31,5 @@ export class ShopRepository {
       }
     }
     return items[0];
-  }
+  }*/
 }

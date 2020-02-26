@@ -5,6 +5,6 @@ export class CartItemEntity {
   price: number;
   model: string;
   make: string;
-  year: number;
+  year: string;
   count: number;
 }

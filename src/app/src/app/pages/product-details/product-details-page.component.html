@@ -7,41 +7,43 @@
   </nav>
 </div>
 
+<div class="d-flex justify-content-center"><mat-spinner *ngIf="showSpinner"></mat-spinner></div>
+
 <div class="container my-3" >
   <div class="row">
-    <div class="col-md-6" *ngFor="let item of searchResult.items">
-      <img class="card-img-top img-thumbnail" [src]="item.externalImages" alt="Card image cap">
+    <div class="col-md-6">
+      <img class="card-img-top img-thumbnail" [src]="vehicle.externalImages" alt="Card image cap">
     </div>
-    <div class="col-md-6" *ngFor="let item of searchResult.items">
-      <h2>{{item.title}}</h2>
+    <div class="col-md-6">
+      <h2>{{vehicle.title}}</h2>
       <div class="row">
         <div class="col-md-12">
           <span class="label label-primary">Vehicle VIN: </span>
-          <span class="text-monospace">{{item.vin}}</span>
+          <span class="text-monospace">{{vehicle.vin}}</span>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 mt-2">
           <p class="description">
-            {{item.make}}
+            {{vehicle.make}}
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 mt-2">
           <p class="description">
-            {{item.model}}
+            {{vehicle.model}}
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 bottom-rule">
-          <h2 class="product-price">{{item.price | currency}}</h2>
+          <h2 class="product-price">{{vehicle.price | currency}}</h2>
         </div>
       </div>
       <div class="row add-to-cart">
         <div class="col-md-9">
-          <button class="btn btn-primary btn-lg btn-brand" style="width: 150px"  (click)="addToCart(item)">
+          <button class="btn btn-primary btn-lg btn-brand" style="width: 150px"  (click)="addToCart(vehicle)">
             Add to Cart
           </button>
         </div>
