@@ -15,18 +15,24 @@
   <div class="row">
     <div class="col-3 d-none d-md-flex flex-column">
       <h4 class="text-center">Filters</h4>
-      <div class="d-flex flex-column" *ngFor="let item of searchResult.filters.categories">
-        <button class="btn btn-light" (click)="showMainContent = !showMainContent">{{item.categoryName | uppercase}}</button>
-        <div class="mt-1" *ngFor="let filter of item.filterItems">
-          <div *ngIf="showMainContent">
-            <mat-checkbox> {{filter.name}} - ({{filter.count}})</mat-checkbox>
+      <div class="d-flex flex-column" *ngFor="let item of searchResult.filters.categories" #category>
+        <button class="btn btn-light"
+                (click)="showHide(category)">{{item.categoryName | uppercase}}</button>
+        <div class="d-flex flex-column" #category>
+          <div class="mt-1" *ngFor="let filter of item.filterItems">
+            <div>
+              <mat-checkbox
+                #checkbox
+                [checked]="filter.isChecked"
+                (click)="buildFilterQuery(filterQuery, item.categoryName, filter.name, !checkbox.checked)"> {{filter.name}} - ({{filter.count}})</mat-checkbox>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="row">
-        <div class="col-12 col-md-3 mt-2" *ngFor="let item of searchResult.items">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mt-2" *ngFor="let item of searchResult.items">
           <div class="card">
             <div class="card-img-top">
               <img class="img-thumbnail" [src]="item.externalImages">
@@ -59,12 +65,11 @@
               </div>
               <div class="row">
                 <div class="col-12 col-sm-12 col-md-6">
-                  <button class="btn btn-primary btn-sm btn-block text-white" (click)="productClick(item.vin)">Show
-                    More
+                  <button class="btn btn-primary btn-sm btn-block text-white" (click)="productClick(item.vin)">Details
                   </button>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 mt-sm-2 mt-md-0">
-                  <button class="btn btn-success btn-sm btn-block" (click)="addToCart(item)">Buy NOW</button>
+                <div class="col-12 col-sm-12 col-md-6 mt-2 mt-sm-2 mt-md-0 mt-lg-0">
+                  <button class="btn btn-success btn-sm btn-block" (click)="addToCart(item)">Buy</button>
                 </div>
               </div>
             </div>

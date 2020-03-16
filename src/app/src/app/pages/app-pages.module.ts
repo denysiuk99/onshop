@@ -16,7 +16,7 @@ import {CartModule} from '../../_core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CheckoutPageComponent} from './checkout';
 import {OrderNumberPageComponent} from './order-number';
-import {MAT_CHECKBOX_CLICK_ACTION, MatCheckboxModule, MatProgressSpinnerModule, MatSliderModule} from '@angular/material';
+import {MatCheckboxModule, MatProgressSpinnerModule, MatSliderModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
 

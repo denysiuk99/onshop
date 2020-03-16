@@ -5,7 +5,7 @@ import {ShopRepository} from '../../../_data/repository';
 import {CartService} from '../../../_core/cart';
 import {AppMapper} from '../../_mapper';
 import {HttpClient} from '@angular/common/http';
-import {Filter, SearchResult, Vehicle} from '../../../_data/models';
+import {FilterNew, SearchResult, Vehicle} from '../../../_data/models';
 
 @Component({
   selector: 'app-product-details-page',

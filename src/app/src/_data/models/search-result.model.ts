@@ -9,9 +9,10 @@ export class SearchResult {
     this.filters = new FilterNew();
   }
 
-  mapFromDto(dto: any) {
+   mapFromDto(dto: any) {
     this.page = dto.page;
     this.pageSize = dto.page_size;
+    this.items = [];
     for (const item of dto.items) {
       const entity = new Vehicle();
       entity.mapFromDto(item);
@@ -20,12 +21,16 @@ export class SearchResult {
     this.filters.mapFromDto(dto.filters);
   }
 }
+
 export class FilterNew {
   public categories: Array<CategoryNew>;
+
   constructor() {
     this.categories = [];
   }
+
   public mapFromDto(dto: any) {
+    this.categories = [];
     for (const item of dto.categories) {
       const entity = new CategoryNew();
       entity.mapFromDto(item);
@@ -41,6 +46,7 @@ export class CategoryNew {
   constructor() {
     this.filterItems = [];
   }
+
   public mapFromDto(dto: any) {
     this.categoryName = dto.categoryName;
     for (const item of dto.filter_items) {
@@ -54,10 +60,12 @@ export class CategoryNew {
 export class FilterItemNew {
   public name: string;
   public count: number;
+  public  isChecked: boolean;
 
   public mapFromDto(dto: any) {
     this.name = dto.name;
     this.count = dto.count;
+    this.isChecked = dto.is_checked;
   }
 }
 
@@ -85,40 +93,4 @@ export class Vehicle {
     this.externalImages = dto.externalImages;
   }
 }
-
-/*
-export class Filter {
-  public categories: Array<any>;
-  public categoryName: any;
-  public filterItems: Array<FilterItem>;
-
-  constructor() {
-    this.filterItems = new Array<FilterItem>();
-  }
-
-  mapFromDto(dto: { filter_items }) {
-    // this.categories = dto.categories;
-    // this.categoryName = dto.categoryName;
-    /!*for (const filterItem of dto.filter_items) {
-      const entity = new FilterItem();
-      entity.mapFromDto(filterItem);
-      this.filterItems.push(entity);
-    }*!/
-  }
-}
-*/
-/*
-
-export class FilterItem {
-  public name: string;
-  public isChecked: boolean;
-  public count: number;
-
-  public mapFromDto(dto: any) {
-    this.name = dto.name;
-    this.isChecked = dto.is_checked;
-    this.count = dto.count;
-  }
-}
-*/
 
