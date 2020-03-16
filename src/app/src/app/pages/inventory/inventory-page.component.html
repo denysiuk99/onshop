@@ -7,30 +7,71 @@
   </nav>
 </div>
 
-<!--
+<div class="d-flex justify-content-center">
+  <mat-spinner *ngIf="showSpinner"></mat-spinner>
+</div>
 
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-4 mt-3" *ngFor="let item of products">
-      <div class="card border-success">
-        <img class="card-img-top img-thumbnail" [src]="item.imageUrl" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-header-pills">
-            <a routerLink="/categories">
-              <h6 routerLink="/categories" class="card-title">{{item.categoryId}}</h6>
-            </a>
-          </div>
-          <h5 class="card-title text-center">{{item.title}}</h5>
-          <p class="card-text">{{item.description}}</p>
-          <h6 class="card-text">{{item.price | currency}}</h6>
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-6">
-              <button class="btn btn-primary btn-lg btn-block text-white" (click)="productClick(item.productId)">Show
-                More
-              </button>
+    <div class="col-3 d-none d-md-flex flex-column">
+      <h4 class="text-center">Filters</h4>
+      <div class="d-flex flex-column" *ngFor="let item of searchResult.filters.categories" #category>
+        <button class="btn btn-light"
+                (click)="showHide(category)">{{item.categoryName | uppercase}}</button>
+        <div class="d-flex flex-column" #category>
+          <div class="mt-1" *ngFor="let filter of item.filterItems">
+            <div>
+              <mat-checkbox
+                #checkbox
+                [checked]="filter.isChecked"
+                (click)="buildFilterQuery(filterQuery, item.categoryName, filter.name, !checkbox.checked)"> {{filter.name}} - ({{filter.count}})</mat-checkbox>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 mt-sm-2 mt-md-0 mt-2">
-              <button class="btn btn-success btn-lg btn-block" (click)="addToCart(item)">Buy NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mt-2" *ngFor="let item of searchResult.items">
+          <div class="card">
+            <div class="card-img-top">
+              <img class="img-thumbnail" [src]="item.externalImages">
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12">
+                  <p class="card-title">{{item.title}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <p class="card-title">Make: {{item.make}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <p class="card-title">Model: {{item.model}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <p class="card-title">Year: {{item.year}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <p class="card-title">Price: {{item.price | currency}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-6">
+                  <button class="btn btn-primary btn-sm btn-block text-white" (click)="productClick(item.vin)">Details
+                  </button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 mt-2 mt-sm-2 mt-md-0 mt-lg-0">
+                  <button class="btn btn-success btn-sm btn-block" (click)="addToCart(item)">Buy</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -39,54 +80,3 @@
   </div>
 </div>
 
--->
-
-
-<div class="container">
-  <div class="row" >
-    <div class="col-12 col-md-3 mt-2" *ngFor="let item of searchResult.items">
-      <div class="card">
-        <div class="card-img-top">
-          <img class="img-thumbnail" [src]="item.externalImages">
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-12">
-              <p class="card-title">{{item.title}}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <p class="card-title">Make: {{item.make}}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <p class="card-title">Model: {{item.model}}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <p class="card-title">Year: {{item.year}}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <p class="card-title">Price: {{item.price | currency}}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-6">
-              <button class="btn btn-primary btn-sm btn-block text-white" (click)="productClick(item.id)">Show
-                More
-              </button>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 mt-sm-2 mt-md-0 mt-2">
-              <button class="btn btn-success btn-sm btn-block" (click)="addToCart(item)">Buy NOW</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

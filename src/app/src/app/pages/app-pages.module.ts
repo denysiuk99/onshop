@@ -16,7 +16,7 @@ import {CartModule} from '../../_core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CheckoutPageComponent} from './checkout';
 import {OrderNumberPageComponent} from './order-number';
-import {MatSliderModule} from '@angular/material';
+import {MatCheckboxModule, MatProgressSpinnerModule, MatSliderModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
 
@@ -32,7 +32,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProductDetailsPageComponent,
     CartPageComponent,
     CheckoutPageComponent,
-    OrderNumberPageComponent
+    OrderNumberPageComponent,
+
   ],
   imports: [
     CommonModule,
@@ -45,6 +46,8 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     MatSliderModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
+    MatCheckboxModule,
 
     /// core
     CartModule,

@@ -42,7 +42,7 @@ export const routes: Routes = [
         component: MyAccountPageComponent
       },
       {
-        path: 'product/:productId',
+        path: 'product/:vin',
         component: ProductDetailsPageComponent
       },
       {

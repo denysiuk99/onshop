@@ -1,6 +1,7 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {Product} from '../../../_core/entities';
 
+
 @Pipe({
   name: 'filterPrice'
 })

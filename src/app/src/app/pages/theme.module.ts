@@ -8,7 +8,7 @@ import {FilterPipe} from '../pipes/filter.pipe';
 
 
 @NgModule({
-  declarations:[
+  declarations: [
     HeaderComponent,
     FooterComponent,
     FilterPipe
