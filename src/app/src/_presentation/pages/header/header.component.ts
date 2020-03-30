@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
-import {CartService} from '../../_core/cart';
-import {mocks} from '../../_data/repository/mock';
 import {ActivatedRoute} from '@angular/router';
-import {ShopRepository} from '../../_data/repository';
-import {Product} from '../../_core/entities';
+import {ShopRepository} from '../../../_data/repository';
+import {Product} from '../../../_core/entities';
+import {CartService} from '../../../_core/cart';
+import {mocks} from '../../../_data/repository/mock';
 
 
 @Component({

@@ -1,11 +1,10 @@
 import {Component, Injectable, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CategoryNew, FilterItemNew, FilterNew, SearchResult, ShopRepository, Vehicle} from '../../../_data';
-import {Categories, Product} from '../../../_core/entities';
+import { ShopRepository, Vehicle} from '../../../_data';
 import {CartService} from '../../../_core';
-import {AppMapper} from '../../_mapper';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {InventoryFilter} from './models';
+import {AppMapper} from '../../_mapper';
 
 @Component({
   selector: 'app-inventory-page',
@@ -15,17 +14,13 @@ import {InventoryFilter} from './models';
 
 export class InventoryPageComponent implements OnInit {
   /// fields
-  public products: Array<Product> = [];
+
   public inventoryFilter: InventoryFilter;
 
 
   /// constructor
   constructor(private route: ActivatedRoute, private test: ShopRepository, private router: Router, private cartService: CartService, private http: HttpClient) {
     this.inventoryFilter = new InventoryFilter(http);
-
-    this.route.params.subscribe((data) => {
-      this.products = this.test.getProducts(Number(data.categoryId));
-    });
   }
 
 

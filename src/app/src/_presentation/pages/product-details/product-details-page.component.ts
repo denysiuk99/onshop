@@ -36,5 +36,4 @@ export class ProductDetailsPageComponent implements OnInit {
   public addToCart(item: Vehicle) {
     this.cartService.addItem(AppMapper.toCartItem(item));
   }
-
 }
