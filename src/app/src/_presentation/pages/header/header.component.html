@@ -32,7 +32,7 @@
         </a>
       </li>
       <div class="dropdown position-relative">
-        <input class="form-control mr-sm-2" type="search" [(ngModel)]="search">
+        <input class="form-control mr-sm-2" placeholder="Search..." type="search" [(ngModel)]="search">
         <div class="d-flex flex-column position-absolute">
           <div *ngFor="let product of products | filter:search" [hidden]="search == ''" class="dropdown-content ">
             <a [routerLink]="'/product/' + product.productId">{{product.title}} | {{product.price | currency}}</a>

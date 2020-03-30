@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
-import {HeaderComponent} from '../header';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {FooterComponent} from '../footer';
-import {FilterPipe} from '../pipes/filter.pipe';
+import {FilterPipe} from './pipes/filter.pipe';
+import {HeaderComponent} from './header';
+import {FooterComponent} from './footer';
 
 
 @NgModule({

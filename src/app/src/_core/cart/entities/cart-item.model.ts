@@ -1,4 +1,4 @@
-export class CartItemEntity {
+export class CartItemModel {
   id: number;
   externalImages: string;
   title: string;
@@ -7,4 +7,5 @@ export class CartItemEntity {
   make: string;
   year: string;
   count: number;
+  vin: string;
 }

@@ -8,14 +8,14 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <mat-spinner *ngIf="showSpinner"></mat-spinner>
+  <mat-spinner *ngIf="inventoryFilter.showSpinner"></mat-spinner>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-3 d-none d-md-flex flex-column">
       <h4 class="text-center">Filters</h4>
-      <div class="d-flex flex-column" *ngFor="let item of searchResult.filters.categories" #category>
+      <div class="d-flex flex-column" *ngFor="let item of inventoryFilter.searchResult.filters.categories" #category>
         <button class="btn btn-light"
                 (click)="showHide(category)">{{item.categoryName | uppercase}}</button>
         <div class="d-flex flex-column" #category>
@@ -24,7 +24,7 @@
               <mat-checkbox
                 #checkbox
                 [checked]="filter.isChecked"
-                (click)="buildFilterQuery(filterQuery, item.categoryName, filter.name, !checkbox.checked)"> {{filter.name}} - ({{filter.count}})</mat-checkbox>
+                (click)="inventoryFilter.buildFilterQuery(inventoryFilter.filterQuery, item.categoryName, filter.name, !checkbox.checked)"> {{filter.name}} - ({{filter.count}})</mat-checkbox>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
     </div>
     <div class="col">
       <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mt-2" *ngFor="let item of searchResult.items">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 mt-2" *ngFor="let item of inventoryFilter.searchResult.items">
           <div class="card">
             <div class="card-img-top">
               <img class="img-thumbnail" [src]="item.externalImages">
